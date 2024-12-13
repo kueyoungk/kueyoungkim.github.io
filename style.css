@@ -11,7 +11,7 @@ header {
     box-sizing: border-box;
 }
 
-.top-bar {
+.menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,14 +20,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #444;
+    background: #1d1d1d;
     color: #fff;
     padding: 0.5em 1em;
     box-sizing: border-box;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-.logo {
+.name {
     font-size: 1.2em;
     font-weight: bold;
 }
@@ -44,8 +44,27 @@ nav li {
 }
 
 nav a {
+    position: relative;
     color: #fff;
     text-decoration: none;
+    padding: 0.5em;
+}
+
+/* Create the underline with a pseudo-element */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease; /* Transition for the dynamic effect */
+}
+
+/* On hover, expand the underline from left to right */
+nav a:hover::after {
+    width: 100%;
 }
 
 /* Header styling */
@@ -96,29 +115,34 @@ hr {
 
 .about-container {
     display: flex;
-    flex-wrap: wrap;
+    align-items: flex-start; 
+    justify-content: flex-start;
+    flex-wrap: nowrap;
 }
 
-.professional-picture {
-    flex: 1 1 200px;
-    max-width: 200px;
-    margin-right: 1em;
+.headshot {
+    margin-right: 1em; 
+    display: block;
 }
 
-.professional-picture img {
+.headshot img {
+    width: 200px;
     max-width: 100%;
     height: auto;
-    border: 1px solid #ccc;
 }
 
 .bio {
     flex: 1;
+    text-align: justify;
+    padding-top: 0;
 }
 
-.interests {
-    margin-top: 1em;
-    font-style: italic;
+.bio-subtext {
     font-size: 0.9em;
+}
+
+.bio-subtext a{
+    color: #689dff;
 }
 
 .projects-section .project-item {
@@ -150,6 +174,22 @@ hr {
 
 .project-info {
     flex: 1;
+}
+
+.more-text {
+    display: none; /* Hidden by default */
+}
+
+.toggle-button {
+    background: #444;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background: #222;
 }
 
 .cv-section .cv-info {

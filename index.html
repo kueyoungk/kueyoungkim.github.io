@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
     <header>
-        <div class="top-bar">
-            <div class="logo">Kueyoung Kim</div>
+        <div class="menu">
+            <div class="name">Kueyoung Kim</div>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -21,71 +20,104 @@
             </nav>
         </div>
         <div class="header-photo">
-            <img src="assets/Kueyoung_ZarzarLab2.JPG" alt="Header Photo" />
+            <img src="docs/assets/Kueyoung_ZarzarLab2.JPG" alt="Header Photo" />
         </div>
     </header>
 
     <main class = "main-content">
+        <!-- ABOUT SECTION -->
         <section id="about" class="about-section">
             <h2>About</h2>
             <div class="about-container">
-                <div class="professional-picture">
-                    <!-- Replace with your portrait image -->
-                    <img src="assets/IMG_4959.jpeg" alt="Professional Portrait" />
+                <div class="headshot">
+                    <img src="docs/assets/IMG_4959.jpeg" alt="Professional Headshot" />
                 </div>
                 <div class="bio">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Suspendisse varius, lorem sed cursus consectetur, risus risus vulputate felis, 
-                        vel elementum ipsum libero ac eros.
+                        Kueyoung is a senior studying Chemistry with a minor in Mathematics at Penn State. 
+                        Through his diverse research projects, from elucidating how surfactants impact wetted oil droplets 
+                        to employing DNA origami to investigate photosynthetic energy transport, he has had the opportunity 
+                        to join diverse scientific communities across the world, including at the University of Pennsylvania, 
+                        UC Berkeley, the Max Planck Institute for Dynamics and Self-Organization, and MIT. He has authored two 
+                        first-author publications and received multiple awards for his work at local and national conferences. 
+                        In his future endeavors pursuing a PhD in Chemistry and a research career as a professor, he is determined 
+                        to apply his collaborative mindset and ceaseless curiosity to tackle questions at the intersection of 
+                        chemistry, physics, and biology. Outside of the lab, Kueyoung organizes science outreach for local K12 
+                        students and serves as the President of the Eberly College of Science’s student ambassador organization.
                     </p>
                 </div>
             </div>
-            <div class="interests">
+            <div class="bio-subtext">
                 <p><strong>Interests:</strong> Materials, Physical Chemistry, Sustainability</p>
+                <p><strong>Email:</strong> <a href = "mailto:kueyoungkim@gmail.com">kueyoungkim@gmail.com</a></p>
             </div>
         </section>
 
         <hr />
 
+        <!-- PROJECTS SECTION -->
         <section id="projects" class="projects-section">
             <h2>Projects</h2>
 
-            <!-- Example Project -->
+            <!-- 2025 Penn State History Drops -->
             <article class="project-item">
-                <div class="project-year">2022</div>
+                <div class="project-year">2025</div>
                 <div class="project-summary">
-                    <!-- Replace with a summary image for the project -->
                     <img src="project1.jpg" alt="Project Summary Image" />
                 </div>
                 <div class="project-info">
-                    <p>This project involved creating a user-friendly interface for a mobile application...</p>
+                    <p>
+                        This project involved creating a user-friendly interface for a mobile application...
+                        <span class="more-text">
+                            Additional details about the project go here. This might include
+                            technical specifications, methodologies, and results that you 
+                            don't want to show unless the user is interested.
+                        </span>
+                    </p>
+                    <button class="toggle-button">See More</button>
                 </div>
             </article>
 
+            <!-- 2024 Penn State Accounts -->
             <article class="project-item">
-                <div class="project-year">2021</div>
+                <div class="project-year">2025</div>
                 <div class="project-summary">
-                    <img src="project2.jpg" alt="Project Summary Image" />
+                    <img src="project1.jpg" alt="Project Summary Image" />
                 </div>
                 <div class="project-info">
-                    <p>A research project exploring the impact of responsive design on user engagement...</p>
+                    <p>
+                        This project involved creating a user-friendly interface for a mobile application...
+                        <span class="more-text">
+                            Additional details about the project go here. This might include
+                            technical specifications, methodologies, and results that you 
+                            don't want to show unless the user is interested.
+                        </span>
+                    </p>
+                    <button class="toggle-button">See More</button>
                 </div>
             </article>
 
+            <!-- 2023 Penn State Dewetting -->
             <article class="project-item">
-                <div class="project-year">2020</div>
+                <div class="project-year">2025</div>
                 <div class="project-summary">
-                    <img src="project3.jpg" alt="Project Summary Image" />
+                    <img src="project1.jpg" alt="Project Summary Image" />
                 </div>
                 <div class="project-info">
-                    <p>Developed a unique interactive visualization tool for large datasets...</p>
+                    <p>
+                        This project involved creating a user-friendly interface for a mobile application...
+                        <span class="more-text">
+                            Additional details about the project go here. This might include
+                            technical specifications, methodologies, and results that you 
+                            don't want to show unless the user is interested.
+                        </span>
+                    </p>
+                    <button class="toggle-button">See More</button>
                 </div>
             </article>
-        </section>
-
         <hr />
-
+        
+        <!-- CV SECTION -->
         <section id="cv" class="cv-section">
             <h2>Curriculum Vitae</h2>
             <div class="cv-info">
@@ -100,7 +132,8 @@
         </section>
 
         <hr />
-
+        
+        <!-- CONTACT SECTION -->
         <section id="contact" class="contact-section">
             <h2>Contact</h2>
             <div class="contact-container">
@@ -126,5 +159,6 @@
         <p>&copy; 2024 Kueyoung Kim. All rights reserved.</p>
     </footer>
     
+    <script src="script.js"></script>
 </body>
 </html>
