@@ -101,7 +101,7 @@ nav a:hover::after {
 hr {
     margin: 2em 0;
     border: none;
-    border-top: 1px solid #000000;
+    border-top: 1.5px solid #2a2a2a;
 }
 
 .about-section, .projects-section, .cv-section, .contact-section {
@@ -190,6 +190,7 @@ hr {
 
 .more-text {
     display: none;
+    color:#5a5a5a;
 }
 
 .toggle-button, .link-button {
