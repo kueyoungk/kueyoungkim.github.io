@@ -220,14 +220,30 @@ hr {
 .cv-link a {
     display: inline-block;
     margin-top: 0.5em;
-    background: #444;
+    background: #5a5a5a;
     color: #fff;
+    font-size: 0.9em;
     padding: 0.5em 1em;
     text-decoration: none;
+    transition: background 0.3s ease;
 }
 
 .cv-link a:hover {
     background: #333;
+}
+
+.short-cv-table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cv-column-left {
+    flex: 0 0 170px;      
+    margin-right: 10px;
+}
+
+.cv-column-right {
+    flex: 1;
 }
 
 /* contact section */
