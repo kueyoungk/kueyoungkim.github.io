@@ -52,7 +52,7 @@ nav a {
     position: relative;
     color: #fff;
     text-decoration: none;
-    padding: 0.5em;
+    padding: 0.2em;
 }
 
 /* line effect on menu buttons */
@@ -62,7 +62,7 @@ nav a::after {
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: #fff;
     transition: width 0.3s ease; 
 }
@@ -163,14 +163,15 @@ hr {
 .project-year {
     flex: 0 0 50px;
     font-weight: bold;
-    margin-right: 1em;
+    margin-right: 10px;
     line-height: 2;
+    margin-top: -8px;
 }
 
 .project-summary {
-    width: 150px;
-    max-width: 150px;
-    margin-right: 1em;
+    width: 120px;
+    max-width: 120px;
+    margin-right: 20px;
     overflow: hidden;
     position: relative;
 }
@@ -193,8 +194,8 @@ hr {
 
 .toggle-button, .link-button {
     display: inline-block;
-    background: #444;
-    color: #fff;
+    background: #5a5a5a;
+    color: #ffffff;
     padding: 0.5em 1em;
     border: none;
     cursor: pointer;
