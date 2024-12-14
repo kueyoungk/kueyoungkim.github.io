@@ -167,8 +167,8 @@ hr {
 }
 
 .project-summary {
-    width: 200px;
-    max-width: 200px;
+    width: 150px;
+    max-width: 150px;
     margin-right: 1em;
     overflow: hidden;
     position: relative;
@@ -183,10 +183,11 @@ hr {
 
 .project-info {
     flex: 1;
+    margin-top: -20px;
 }
 
 .more-text {
-    display: none; /* Hidden by default */
+    display: none;
 }
 
 .toggle-button {
