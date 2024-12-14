@@ -7,9 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const moreText = projectInfo.querySelector('.more-text');
 
             if (moreText.style.display === 'none' || moreText.style.display === '') {
+                // Show the hidden text
                 moreText.style.display = 'inline';
                 button.textContent = 'See Less';
             } else {
+                // Hide the text again
                 moreText.style.display = 'none';
                 button.textContent = 'See More';
             }

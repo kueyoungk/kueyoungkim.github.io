@@ -153,6 +153,7 @@ hr {
 /* projects section */ 
 .projects-section .project-item {
     display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
     margin-bottom: 2em;
     padding-bottom: 1em;
@@ -190,15 +191,22 @@ hr {
     display: none;
 }
 
-.toggle-button {
+.toggle-button, .link-button {
+    display: inline-block;
     background: #444;
     color: #fff;
     padding: 0.5em 1em;
     border: none;
     cursor: pointer;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    font-size: 0.9em;
+    line-height: 1.1; 
+    text-decoration: none;
+    transition: background 0.3s ease;
 }
 
-.toggle-button:hover {
+.toggle-button:hover, .link-button:hover {
     background: #222;
 }
 
@@ -270,57 +278,56 @@ footer {
     font-style: normal;
   }
   
-  .lato-light {
+.lato-light {
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-style: normal;
-  }
-  
-  .lato-regular {
+}
+
+.lato-regular {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
-  .lato-bold {
+}
+
+.lato-bold {
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-style: normal;
-  }
-  
-  .lato-black {
+}
+
+.lato-black {
     font-family: "Lato", sans-serif;
     font-weight: 900;
     font-style: normal;
-  }
-  
-  .lato-thin-italic {
+}
+
+.lato-thin-italic {
     font-family: "Lato", sans-serif;
     font-weight: 100;
     font-style: italic;
-  }
-  
-  .lato-light-italic {
+}
+
+.lato-light-italic {
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-style: italic;
-  }
-  
-  .lato-regular-italic {
+}
+
+.lato-regular-italic {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: italic;
-  }
-  
-  .lato-bold-italic {
+}
+
+.lato-bold-italic {
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-style: italic;
-  }
-  
-  .lato-black-italic {
+}
+
+.lato-black-italic {
     font-family: "Lato", sans-serif;
     font-weight: 900;
     font-style: italic;
-  }
-  
+}
