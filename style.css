@@ -101,7 +101,7 @@ nav a:hover::after {
 hr {
     margin: 2em 0;
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #000000;
 }
 
 .about-section, .projects-section, .cv-section, .contact-section {
