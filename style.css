@@ -1,10 +1,15 @@
+/* import Lato font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* general formatting */
 body, html {
     margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
     background: #efefef
 }
 
+/* menu bar */
 header {
     width: 100%;
     background: #ddd;
@@ -50,7 +55,7 @@ nav a {
     padding: 0.5em;
 }
 
-/* Create the underline with a pseudo-element */
+/* line effect on menu buttons */
 nav a::after {
     content: "";
     position: absolute;
@@ -59,18 +64,17 @@ nav a::after {
     width: 0;
     height: 2px;
     background: #fff;
-    transition: width 0.3s ease; /* Transition for the dynamic effect */
+    transition: width 0.3s ease; 
 }
 
-/* On hover, expand the underline from left to right */
 nav a:hover::after {
     width: 100%;
 }
 
-/* Header styling */
+/* banner photo */
 .header-photo {
     width: 100%;
-    aspect-ratio: 4.5 / 1;
+    aspect-ratio: 4 / 1;
     overflow: hidden; 
     position: relative;
 }
@@ -82,17 +86,16 @@ nav a:hover::after {
     display: block;
 }
 
-/* Main content*/
+/* container for main content */
 .main-content {
     position: relative;
     width: 80%;
-    margin: 0 auto;    /* Centers the content box horizontally */
+    margin: 0 auto;
     background: #fff;
     padding: 3em;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    margin-top: -10vw; /* Pull the box upwards so it sits on top of the header */
-    z-index: 1;        /* Ensure it appears above the header image */
+    margin-top: -10vw;
+    z-index: 1;
 }
 
 hr {
@@ -105,12 +108,14 @@ hr {
     margin-bottom: 2em;
 }
 
-.about-section h2,
-.projects-section h2,
-.cv-section h2,
-.contact-section h2 {
+.about-section h2, .projects-section h2, .cv-section h2, .contact-section h2 {
     margin-bottom: 1em;
     font-size: 1.5em;
+}
+
+/* about section */
+.about-header {
+    margin-top: -3vw;
 }
 
 .about-container {
@@ -134,7 +139,7 @@ hr {
 .bio {
     flex: 1;
     text-align: justify;
-    padding-top: 0;
+    margin-top: -20px;
 }
 
 .bio-subtext {
@@ -145,6 +150,7 @@ hr {
     color: #689dff;
 }
 
+/* projects section */ 
 .projects-section .project-item {
     display: flex;
     flex-wrap: wrap;
@@ -161,15 +167,18 @@ hr {
 }
 
 .project-summary {
-    flex: 0 0 200px;
+    width: 200px;
     max-width: 200px;
     margin-right: 1em;
+    overflow: hidden;
+    position: relative;
 }
 
 .project-summary img {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #ccc;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .project-info {
@@ -192,6 +201,7 @@ hr {
     background: #222;
 }
 
+/* CV */
 .cv-section .cv-info {
     margin-bottom: 1em;
 }
@@ -209,6 +219,7 @@ hr {
     background: #333;
 }
 
+/* contact section */
 .contact-container {
     display: flex;
     flex-wrap: wrap;
@@ -242,6 +253,7 @@ hr {
     text-decoration: underline;
 }
 
+/* footer */
 footer {
     text-align: center;
     padding: 1em;
@@ -249,3 +261,65 @@ footer {
     font-size: 0.9em;
     color: #777;
 }
+
+/* Lato font classes */
+.lato-thin {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .lato-black {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .lato-thin-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .lato-light-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .lato-regular-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .lato-bold-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .lato-black-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
