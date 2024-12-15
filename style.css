@@ -274,8 +274,8 @@ hr {
 }
 
 .contact-logos img {
-    width: 50px;                     /* Set the width of each logo */
-    height: 50px;                    /* Ensure logos are square */
+    max-width: 50px;                     /* Set the width of each logo */
+    max-height: 50px;                    /* Ensure logos are square */
     object-fit: contain;             /* Maintain aspect ratio of logos */
     transition: transform 0.3s ease; /* Add a hover effect */
 }
