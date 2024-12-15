@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 button.textContent = 'See Less';
             } else {
                 moreText.style.display = 'none';
+                button.textContent = 'See More';
             }
         });
     });
