@@ -194,6 +194,7 @@ hr {
     font-size: 11pt;
     text-align: justify;
     line-height: 1.25;
+    margin-top: 2pt;
 }
 
 .toggle-button, .link-button {
