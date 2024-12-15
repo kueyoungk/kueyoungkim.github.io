@@ -254,23 +254,23 @@ hr {
 
 /* contact section */
 .contact-section {
-    text-align: center;              /* Center-align the heading */
+    text-align: center;
     padding-top: 5px;
-    padding-bottom: 15px;              /* Add spacing around the section */
-    background: #efefef88;             /* Light background color */
+    padding-bottom: 15px;
+    background: #efefef88;
 }
 
 .contact-logos {
-    display: flex;                   /* Use Flexbox for layout */
-    justify-content: center;         /* Center align the logos horizontally */
-    align-items: center;             /* Vertically align the logos */
-    gap: 2rem;                       /* Add spacing between logos */
-    margin-top: 1rem;       
-    margin-bottom: 1rem;           /* Add space between heading and logos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .contact-logos a {
-    display: inline-block;           /* Ensure the link is sized to the image */
+    display: inline-block;
 }
 
 .contact-logos img {
