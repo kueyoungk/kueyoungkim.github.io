@@ -246,38 +246,42 @@ hr {
     flex: 1;
 }
 
+.cv-column-right ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
 /* contact section */
-.contact-container {
-    display: flex;
-    flex-wrap: wrap;
+.contact-section {
+    text-align: center;              /* Center-align the heading */
+    padding-top: 5px;
+    padding-bottom: 15px;              /* Add spacing around the section */
+    background: #efefef88;             /* Light background color */
 }
 
-.contact-blurb {
-    flex: 1 1 200px;
-    margin-right: 2em;
+.contact-logos {
+    display: flex;                   /* Use Flexbox for layout */
+    justify-content: center;         /* Center align the logos horizontally */
+    align-items: center;             /* Vertically align the logos */
+    gap: 2rem;                       /* Add spacing between logos */
+    margin-top: 1rem;       
+    margin-bottom: 1rem;           /* Add space between heading and logos */
 }
 
-.contact-links {
-    flex: 1;
+.contact-logos a {
+    display: inline-block;           /* Ensure the link is sized to the image */
 }
 
-.contact-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.contact-logos img {
+    width: 50px;                     /* Set the width of each logo */
+    height: 50px;                    /* Ensure logos are square */
+    object-fit: contain;             /* Maintain aspect ratio of logos */
+    transition: transform 0.3s ease; /* Add a hover effect */
 }
 
-.contact-links li {
-    margin-bottom: 0.5em;
-}
-
-.contact-links a {
-    text-decoration: none;
-    color: #333;
-}
-
-.contact-links a:hover {
-    text-decoration: underline;
+.contact-logos img:hover {
+    transform: scale(1.05);           /* Slightly enlarge logo on hover */
 }
 
 /* footer */
