@@ -75,7 +75,7 @@ nav a:hover::after {
 .header-photo {
     width: 100%;
     aspect-ratio: 4 / 1;
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
 }
 
@@ -93,7 +93,7 @@ nav a:hover::after {
     margin: 0 auto;
     background: #fff;
     padding: 3em;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     margin-top: -10vw;
     z-index: 1;
 }
@@ -115,7 +115,7 @@ hr {
 
 /* about section */
 .about-header {
-    margin-top: -3vw;
+    margin-top: -2em;
 }
 
 .about-container {
@@ -155,7 +155,7 @@ hr {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     padding-bottom: 1em;
     border-bottom: 1px solid #eee;
 }
@@ -245,7 +245,7 @@ hr {
 .contact-section {
     text-align: center;
     padding-top: 5px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     background: #efefef88;
 }
 
