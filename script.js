@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Toggle buttons for project details
     const toggleButtons = document.querySelectorAll('.toggle-button');
 
     toggleButtons.forEach((button) => {
@@ -15,14 +16,22 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+    // Navigation bar toggle
     const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('nav');
+    const navMenu = document.querySelector('nav'); // Target the nav element directly
 
     navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        nav.classList.toggle('visible');
+        if (navMenu.classList.contains('visible')) {
+            navMenu.classList.remove('visible');
+            navMenu.classList.add('collapsing');
+            setTimeout(() => {
+                navMenu.classList.remove('collapsing');
+                navMenu.style.display = 'none';
+            }, 100); // Match slideUp animation duration
+        } else {
+            navMenu.style.display = 'flex';
+            navMenu.classList.add('visible');
+        }
     });
 });
