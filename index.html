@@ -242,9 +242,12 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Kueyoung Kim. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Kueyoung Kim. All rights reserved.</p>
     </footer>
     
     <script src="script.js"></script>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
 </body>
 </html>
