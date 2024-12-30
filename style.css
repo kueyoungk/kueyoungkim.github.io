@@ -298,7 +298,13 @@ hr {
 .cv-section {
     background: #34312D;
     color: #ffffff;
-    padding: 2em;
+    padding: 2em 6em;
+}
+
+@media (max-width: 768px) {
+    .cv-section {
+        padding: 2em 3em;
+    }
 }
 
 .cv-section .cv-info {
