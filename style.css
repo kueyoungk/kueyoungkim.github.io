@@ -155,7 +155,8 @@ nav a:hover::after {
 /* container for main content */
 .main-content {
     width: 90%;
-    margin: -7vw auto 0 auto;
+    max-width: 1200px;
+    margin: clamp(-120px, -7vw, -60px) auto 0 auto;
     background: #fff;
     padding: 3em;
     position: relative;
@@ -389,6 +390,41 @@ footer {
     }
 
     .projects-section {
-        margin-top: 0 auto;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 769px) {
+    nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        padding: 0;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 2em;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 1em;
+    }
+
+    .contact-logos img {
+        max-width: 40px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .main-content {
+        margin-top: -120px;
     }
 }
