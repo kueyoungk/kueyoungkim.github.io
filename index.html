@@ -10,39 +10,42 @@
 <body>
     <header>
         <div class="menu">
-            <div class="name">Kueyoung Kim</div>
+            <div class="name reveal">Kueyoung Kim</div>
             <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#cv">CV</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li class="reveal"><a href="#about">About</a></li>
+                    <li class="reveal"><a href="#projects">Projects</a></li>
+                    <li class="reveal"><a href="#cv">CV</a></li>
+                    <li class="reveal"><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="header-photo">
+        <div class="header-photo reveal">
+            <!-- intentionally NOT animated -->
             <img src="docs/assets/MPL_banner.jpeg" alt="Header Photo" />
         </div>
     </header>
 
-    <main class = "main-content">
+    <main class="main-content">
         <!-- about section -->
         <section id="about" class="about-section">
-            <div class="about-header">
+            <div class="about-header reveal">
                 <h2>About</h2>
             </div>
+
             <div class="about-container">
-                <div class="headshot">
+                <div class="headshot reveal">
                     <img src="docs/assets/IMG_4959.jpeg" alt="Professional Headshot" />
                 </div>
+
                 <div class="bio">
-                    <p>
+                    <p class="reveal">
                         Kueyoung is a Churchill Scholar at the Cavendish Laboratory, University of Cambridge, where he is pursuing an MPhil in Physics in the group of Prof. Richard Friend. 
                         He graduated summa cum laude (4.0 GPA) from Penn State with honors in chemistry where he worked with Prof. Lauren Zarzar on the non-equilibrium dynamics of oil-in-water emulsions. 
                     </p>
 
-                    <p>
+                    <p class="reveal">
                         Through his interdisciplinary research projects ranging from elucidating how surfactants impact wetted oil droplets 
                         to modeling photosynthetic energy transport with DNA origami, he has had the opportunity 
                         to join diverse scientific communities across the world, including at the University of Pennsylvania, 
@@ -53,45 +56,48 @@
                         to apply his collaborative mindset and ceaseless curiosity at the intersection of 
                         chemistry, physics, and biology. 
                     </p>
-                        
-                    <p> 
+
+                    <p class="reveal">
                         Outside of the lab, Kueyoung organizes science outreach for local K12 students and served as the President of the Eberly College of Science’s student ambassador organization. 
                         In his free time, you can find Kueyoung lumbering through his (admittedly daunting) stack of "to be read" literary fiction, lifting heavy objects for fun in the gym, 
                         and agonizing over his coffee-brewing technique. 
                     </p>
                 </div>
             </div>
-            <div class="bio-subtext">
+
+            <div class="bio-subtext reveal">
                 <p><strong>Select Awards:</strong> <ul style="margin-top:-15px;"><li>Churchill Scholarship (2025)</li><li>NSF GRFP (Declined, 2025)</li><li>Goldwater Scholarship (2023)</li><li>Penn State Millennium Scholars Program (2021)</li></ul>
                 <strong>Interests:</strong> Materials, Sustainability, Physical Chemistry, Physical Biology <br>
-                <strong>Email:</strong> <a href = "mailto:kek36@cam.ac.uk">kek36@cam.ac.uk</a></p>
+                <strong>Email:</strong> <a href="mailto:kek36@cam.ac.uk">kek36@cam.ac.uk</a></p>
             </div>
         </section>
     </main>
         
-    <div class="separator-box"></div> <!-- Dark gray box -->
+    <div class="separator-box reveal"></div> <!-- Dark gray box -->
     
-    <main class = "main-content">
+    <main class="main-content">
         <!-- projects section -->
         <section id="projects" class="projects-section">
-            <h2>Projects</h2>
-            <h3>University of Cambridge, 2025–26</h3>
-            <!-- 2026  -->
-                <article class="project-item">
-                    <div class="project-year">2026</div>
-                    <div class="project-image">
-                        <img src="docs/assets/MPL_banner.jpeg" alt="Project Image" />
-                    </div>
-                    <div class="project-info">
-                        <p>
-                            <strong> Coming soon...</strong> <br>
-                        </p>
-                    </div>
-                </article>
+            <h2 class="reveal">Projects</h2>
+            <h3 class="reveal">University of Cambridge, 2025–26</h3>
 
-            <h3>The Pennsylvania State University, 2021–25</h3>
+            <!-- 2026  -->
+            <article class="project-item reveal">
+                <div class="project-year">2026</div>
+                <div class="project-image">
+                    <img src="docs/assets/MPL_banner.jpeg" alt="Project Image" />
+                </div>
+                <div class="project-info">
+                    <p>
+                        <strong> Coming soon...</strong> <br>
+                    </p>
+                </div>
+            </article>
+
+            <h3 class="reveal">The Pennsylvania State University, 2021–25</h3>
+
             <!-- 2025 Penn State History Drops -->
-            <article class="project-item">
+            <article class="project-item reveal">
                 <div class="project-year">2025</div>
                 <div class="project-image">
                     <img src="docs/assets/history_drops.jpg" alt="Project Image" />
@@ -99,7 +105,7 @@
                 <div class="project-info">
                     <p>
                         <strong> Memory effects in active droplets</strong> <br>
-                        Q. Le*, <u>K. Kim</u>*, B. Khaer, L. D. Zarzar<sup><font size = 1> #</font></sup>, <em> submitted </em> <br>
+                        Q. Le*, <u>K. Kim</u>*, B. Khaer, L. D. Zarzar<sup><font size=1> #</font></sup>, <em> submitted </em> <br>
 
                         <span class="more-text">
                             <strong>Abstract: </strong>Coming soon!
@@ -110,7 +116,7 @@
             </article>
 
             <!-- 2024 Penn State Accounts -->
-            <article class="project-item">
+            <article class="project-item reveal">
                 <div class="project-year">2024</div>
                 <div class="project-image">
                     <img src="docs/assets/accounts.jpg" alt="Project Image" />
@@ -118,7 +124,7 @@
                 <div class="project-info">
                     <p>
                         <strong> Chemical programming of solubilizing, non-equilibrium active droplets </strong> <br>
-                        <u>K. Kim</u>, R. Balaj, L. D. Zarzar<sup><font size = 1> #</font></sup>, <em> Accounts of Chemical Research </em> <br>
+                        <u>K. Kim</u>, R. Balaj, L. D. Zarzar<sup><font size=1> #</font></sup>, <em> Accounts of Chemical Research </em> <br>
 
                         <span class="more-text">
                             <strong>Abstract: </strong>The multifunctionality and resilience of living systems has
@@ -134,7 +140,7 @@
             </article>
 
             <!-- 2023 Penn State Dewetting -->
-            <article class="project-item">
+            <article class="project-item reveal">
                 <div class="project-year">2024</div>
                 <div class="project-image">
                     <img src="docs/assets/dewetting_drop.gif" alt="Project Image" />
@@ -142,7 +148,7 @@
                 <div class="project-info">
                     <p>
                         <strong> Liquid-liquid surfactant partitioning drives dewetting of oil from hydrophobic surfaces </strong> <br>
-                        <u>K. Kim</u>*, W. Xue*, L. D. Zarzar<sup><font size = 1> #</font></sup>, <em> Journal of Colloid and Interface Science </em> <br>
+                        <u>K. Kim</u>*, W. Xue*, L. D. Zarzar<sup><font size=1> #</font></sup>, <em> Journal of Colloid and Interface Science </em> <br>
                         <span class="more-text">
                             <strong>Abstract: </strong>Sessile droplets solubilizing in surfactant solution are frequently encountered in practice, but the
                             factors governing their non-equilibrium dynamics are not well understood. Here, we investigate mechanisms by
@@ -154,126 +160,128 @@
                     <a href="docs/pdfs/2024_JCIS_dewetting_drops.pdf" class="link-button" target="_blank">View Article</a>
                 </div>
             </article>
-        <p>* equal contribution, # corresponding author </p>
+
+            <p class="reveal">* equal contribution, # corresponding author</p>
         </section>
     </main>
         
-        <!-- CV section -->
-        <section id="cv" class="cv-section">
-            <h2>Curriculum Vitae</h2>
-            <div class="cv-info">
-                <div class="short-cv-table">
-                    <div class="cv-column-left">
-                        <p><strong>Education</strong></p>
-                    </div>
-                    <div class="cv-column-right">
-                        <ul>
-                            MPhil Physics (Churchill Scholar), University of Cambridge, 2025–2026 <span style="color: #9a9a9a">[expected]</span> <br>
-                            Advisor: Prof. Sir Richard Friend <br>
-                        </ul>
-                        <ul>
-                            B.S. Chemistry (honors), Penn State, 2021–2025<br>
-                            Advisor: Prof. Lauren Zarzar <br>
-                            Thesis: <i>Non-equilibrium dynamics of oil-in-water emulsions arising from mass transport phenomenoma</i><br>
-                            GPA: 4.0/4.0
-                        </ul>
-                    </div>
+    <!-- CV section -->
+    <section id="cv" class="cv-section">
+        <h2 class="reveal">Curriculum Vitae</h2>
+
+        <div class="cv-info">
+            <div class="short-cv-table reveal">
+                <div class="cv-column-left">
+                    <p><strong>Education</strong></p>
                 </div>
-
-                <div class="short-cv-table">
-                    <div class="cv-column-left">
-                        <p><strong>Research Experience</strong></p>
-                    </div>
-                    <div class="cv-column-right">
-                        <ul>
-                            <li><u>Penn State, Dept. of Chemistry</u><br>
-                            Advisor: Lauren Zarzar <br>
-                            Topic: Non-equilibrium dynamics of oil-in-water emulsions<br>
-                            </li> <br>
-
-                            <li><u>MIT, Dept. of Biological Engineering</u><br>
-                            Advisor: Mark Bathe <br>
-                            Topic: Entropy-driven excitonic energy transport on DNA origami<br>
-                            </li> <br>
-
-                            <li><u>Max Planck Institute for Dynamics and Self-Organization</u><br>
-                            Advisor: David Zwicker <br>
-                            Topic: Thermodynamic modeling of cellular polarization<br>
-                            </li> <br>
-
-                            <li><u>UC Berkeley, Dept. of Chemistry</u><br>
-                            Advisor: Matthew Francis <br>
-                            Topic: Micellar drug delivery to glioblastoma<br>
-                            </li> <br>
-
-                            <li><u>UPenn, Dept. of Mechanical Engineering and Applied Mechanics</u><br>
-                            Advisor: Robert Carpick <br>
-                            Topic: Shear-driven mechanochemical reactions</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="short-cv-table">
-                    <div class="cv-column-left">
-                        <p><strong>Select Honors</strong></p>
-                    </div>
-                    <div class="cv-column-right">
-                        <ul>
-                            <li>NSF Graduate Research Fellowship Program, 2025</li>
-                            <li>Churchill Scholar, 2025</li>
-                            <li>Rhodes Scholarship Finalist, 2024</li>
-                            <li>First Place Poster Award, ACS National Meeting (COLL), 2023</li>
-                            <li>Goldwater Scholarship, 2023</li>
-                            <li>Millennium Scholars Program, 2021</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="short-cv-table">
-                    <div class="cv-column-left">
-                        <p><strong>Service and Leadership</strong></p>
-                    </div>
-                    <div class="cv-column-right">
-                        <ul>
-                            <li>President, Science LionPride, 2021–2025 </li>
-                            <li>Independent K-12 Science Outreach, 2021–2025 </li>
-                            <li>Penn State Chemistry Research Ambassador, 2022–2025</li>
-                            <li>Fluid Mechanics Teaching Assistant, Fa22/Sp23</li>
-                            <li>Event Supervisor, Science Olympiad at Penn State, 2021–2024 </li>
-                        </ul>
-                    </div>
+                <div class="cv-column-right">
+                    <ul>
+                        MPhil Physics (Churchill Scholar), University of Cambridge, 2025–2026 <span style="color: #9a9a9a">[expected]</span> <br>
+                        Advisor: Prof. Sir Richard Friend <br>
+                    </ul>
+                    <ul>
+                        B.S. Chemistry (honors), Penn State, 2021–2025<br>
+                        Advisor: Prof. Lauren Zarzar <br>
+                        Thesis: <i>Non-equilibrium dynamics of oil-in-water emulsions arising from mass transport phenomenoma</i><br>
+                        GPA: 4.0/4.0
+                    </ul>
                 </div>
             </div>
-            <a href="docs/pdfs/KKim_CV_241114.pdf" class="cv-button" target="_blank">View Full CV</a>
-        </section>
+
+            <div class="short-cv-table reveal">
+                <div class="cv-column-left">
+                    <p><strong>Research Experience</strong></p>
+                </div>
+                <div class="cv-column-right">
+                    <ul>
+                        <li><u>Penn State, Dept. of Chemistry</u><br>
+                        Advisor: Lauren Zarzar <br>
+                        Topic: Non-equilibrium dynamics of oil-in-water emulsions<br>
+                        </li> <br>
+
+                        <li><u>MIT, Dept. of Biological Engineering</u><br>
+                        Advisor: Mark Bathe <br>
+                        Topic: Entropy-driven excitonic energy transport on DNA origami<br>
+                        </li> <br>
+
+                        <li><u>Max Planck Institute for Dynamics and Self-Organization</u><br>
+                        Advisor: David Zwicker <br>
+                        Topic: Thermodynamic modeling of cellular polarization<br>
+                        </li> <br>
+
+                        <li><u>UC Berkeley, Dept. of Chemistry</u><br>
+                        Advisor: Matthew Francis <br>
+                        Topic: Micellar drug delivery to glioblastoma<br>
+                        </li> <br>
+
+                        <li><u>UPenn, Dept. of Mechanical Engineering and Applied Mechanics</u><br>
+                        Advisor: Robert Carpick <br>
+                        Topic: Shear-driven mechanochemical reactions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="short-cv-table reveal">
+                <div class="cv-column-left">
+                    <p><strong>Select Honors</strong></p>
+                </div>
+                <div class="cv-column-right">
+                    <ul>
+                        <li>NSF Graduate Research Fellowship Program, 2025</li>
+                        <li>Churchill Scholar, 2025</li>
+                        <li>Rhodes Scholarship Finalist, 2024</li>
+                        <li>First Place Poster Award, ACS National Meeting (COLL), 2023</li>
+                        <li>Goldwater Scholarship, 2023</li>
+                        <li>Millennium Scholars Program, 2021</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="short-cv-table reveal">
+                <div class="cv-column-left">
+                    <p><strong>Service and Leadership</strong></p>
+                </div>
+                <div class="cv-column-right">
+                    <ul>
+                        <li>President, Science LionPride, 2021–2025 </li>
+                        <li>Independent K-12 Science Outreach, 2021–2025 </li>
+                        <li>Penn State Chemistry Research Ambassador, 2022–2025</li>
+                        <li>Fluid Mechanics Teaching Assistant, Fa22/Sp23</li>
+                        <li>Event Supervisor, Science Olympiad at Penn State, 2021–2024 </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <a href="docs/pdfs/KKim_CV_241114.pdf" class="cv-button reveal" target="_blank">View Full CV</a>
+    </section>
         
-        <!-- contact section -->
-        <section id="contact" class="contact-section">
-            <h2>Contact</h2>
-            <div class="contact-logos">
-                <a href="https://www.linkedin.com/in/kueyoung-kim/" target="_blank">
-                    <img src="docs/assets/logo_linkedin.png" alt="LinkedIn" />
-                </a>
-                <a href="https://x.com/kueyoung_k" target="_blank">
-                    <img src="docs/assets/logo_X.jpg" alt="Twitter" />
-                </a>
-                <a href="https://github.com/kueyoungk" target="_blank">
-                    <img src="docs/assets/logo_github.png" alt="GitHub" />
-                </a>
-                <a href="https://scholar.google.com/citations?user=x9s75vIAAAAJ&hl=en" target="_blank">
-                    <img src="docs/assets/logo_scholar.png" alt="Google Scholar" />
-                </a>
-                <a href="https://orcid.org/0009-0001-7058-705X" target="_blank">
-                    <img src="docs/assets/logo_orcid.png" alt="OrCID" />
-                </a>
-                <a href="mailto:kek36@cam.ac.uk">
-                    <img src="docs/assets/logo_email.png" alt="OrCID" />
-                </a>
-            </div>
-        </section>
-    </main>
+    <!-- contact section -->
+    <section id="contact" class="contact-section">
+        <h2 class="reveal">Contact</h2>
+        <div class="contact-logos reveal">
+            <a href="https://www.linkedin.com/in/kueyoung-kim/" target="_blank">
+                <img src="docs/assets/logo_linkedin.png" alt="LinkedIn" />
+            </a>
+            <a href="https://x.com/kueyoung_k" target="_blank">
+                <img src="docs/assets/logo_X.jpg" alt="Twitter" />
+            </a>
+            <a href="https://github.com/kueyoungk" target="_blank">
+                <img src="docs/assets/logo_github.png" alt="GitHub" />
+            </a>
+            <a href="https://scholar.google.com/citations?user=x9s75vIAAAAJ&hl=en" target="_blank">
+                <img src="docs/assets/logo_scholar.png" alt="Google Scholar" />
+            </a>
+            <a href="https://orcid.org/0009-0001-7058-705X" target="_blank">
+                <img src="docs/assets/logo_orcid.png" alt="OrCID" />
+            </a>
+            <a href="mailto:kek36@cam.ac.uk">
+                <img src="docs/assets/logo_email.png" alt="Email" />
+            </a>
+        </div>
+    </section>
 
-    <footer>
+    <footer class="reveal">
         <p>&copy; <span id="year"></span> Kueyoung Kim. All rights reserved.</p>
     </footer>
     

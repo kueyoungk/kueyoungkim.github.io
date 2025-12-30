@@ -428,3 +428,27 @@ footer {
         margin-top: -120px;
     }
 }
+
+/* -----------------------------
+   Scroll reveal animation
+------------------------------ */
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 650ms ease, transform 650ms ease;
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Accessibility: respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
