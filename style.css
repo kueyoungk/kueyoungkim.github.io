@@ -257,7 +257,7 @@ hr {
 
 /*separator box*/
 .separator-box {
-    background: #404148;
+    background: #100039;
     margin: 0 auto;
     width: 100vw;
     height: 150px;
@@ -314,7 +314,7 @@ hr {
     background: #ffffff;
     color: #000000;
     padding: 0.5em 1em;
-    border: 1px solid #34312D;
+    border: 1px solid #100039;
     text-decoration: none;
     font-size: 0.9em;
     line-height: 1.1;
@@ -325,7 +325,7 @@ hr {
 }
 
 .publication-info .toggle-button:hover, .publication-info .link-button:hover, .cv-button:hover {
-    background: #5a5a5a;
+    background: #100039;
     color: #ffffff;
 }
 
@@ -342,7 +342,7 @@ hr {
 
 /* CV section */
 .cv-section {
-    background: #404148;
+    background: #100039;
     color: #ffffff;
     padding: 2em 6em;
 }
@@ -361,7 +361,7 @@ hr {
     text-align: center;
     display: inline-block;
     background: #ffffff;
-    color: #404148;
+    color: #100039;
     padding: 0.5em 1em;
     border: 1px solid #ffffff;
     text-decoration: none;
@@ -373,7 +373,7 @@ hr {
 }
 
 .cv-button:hover {
-    background: #404148;
+    background: #100039;
     color: #ffffff;
 }
 
