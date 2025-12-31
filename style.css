@@ -269,50 +269,62 @@ hr {
     margin: auto;
 }
 
-/* publications section */
+/* =============================
+   Publications
+============================= */
 .publications-section {
-    margin: 0 auto 0 auto;
-    z-index: 2;
+    margin: 0 auto;
     position: relative;
+    z-index: 2;
 }
 
+/* One row: year | image | text */
 .publication-item {
-    display: flex;
-    flex-wrap: nowrap;
-    margin-bottom: 1em;
-    gap: 1em;
-    align-items: flex-start;
-    padding-bottom: 1em;
+    display: grid;
+    grid-template-columns: 80px minmax(180px, 260px) 1fr;
+    column-gap: 1.5rem;
+    align-items: start;   /* top-align all columns */
 }
 
+/* Year column */
 .publication-year {
-    flex: 0 0 50px;
-    font-weight: bold;
-    font-size: 1.2em;
-    line-height: 1.5;
+    font-weight: 700;
+    font-size: 1.15em;
+    line-height: 1.15;
     text-align: right;
-    margin-top: -5px;
+    margin: 0;
+    padding-top: 0.15rem; /* small optical tweak to align with image/text */
 }
 
+/* Image column */
 .publication-image {
-    flex: 0 0 auto;
+    width: 100%;
     max-width: 150px;
-    height: auto;
+    margin: 0;
 }
 
 .publication-image img {
+    display: block;       /* prevents baseline alignment issues */
     width: 100%;
     height: auto;
     object-fit: cover;
+    margin: 0;
 }
 
+/* Text column */
 .publication-info {
-    flex: 1;
-    margin-top: 0;
-    text-align: justify;
+    margin: 0;
+    text-align: left;     /* justify often looks odd for short entries */
 }
 
-.publication-info .toggle-button, .publication-info .link-button, .cv-button {
+/* Prevent default <p> margins from pushing titles down */
+.publication-info p {
+    margin: 0;
+}
+
+/* Buttons only inside publications */
+.publication-info .toggle-button,
+.publication-info .link-button {
     display: inline-block;
     background: #ffffff;
     color: #000000;
@@ -321,26 +333,45 @@ hr {
     text-decoration: none;
     font-size: 0.9em;
     line-height: 1.1;
-    margin-top: 0.5em;
+    margin-top: 0.75em;
     margin-right: 0.5em;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-.publication-info .toggle-button:hover, .publication-info .link-button:hover, .cv-button:hover {
+.publication-info .toggle-button:hover,
+.publication-info .link-button:hover {
     background: #100039;
     color: #ffffff;
 }
 
+/* Hidden “more” text */
 .publication-info .more-text {
     display: none;
-    margin-top: 0.5em;
+    margin-top: 0.6em;
     color: #333;
-    font-size: 0.9em;
+    font-size: 0.92em;
 }
 
 .publication-info.show-more .more-text {
-    display: block;
+    display: inline; /* matches your JS choice to reveal inline */
+}
+
+/* Responsive: stack year/image/text cleanly on phones */
+@media (max-width: 768px) {
+    .publication-item {
+        grid-template-columns: 1fr;
+        row-gap: 0.9rem;
+    }
+
+    .publication-year {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .publication-image {
+        max-width: 220px;
+    }
 }
 
 /* Gradient fade divider between publication/project entries */
