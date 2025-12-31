@@ -1,84 +1,67 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Toggle buttons for project details
-    const toggleButtons = document.querySelectorAll('.toggle-button');
+  // -----------------------------
+  // See More / See Less toggles
+  // -----------------------------
+  const toggleButtons = document.querySelectorAll('.toggle-button');
 
-    toggleButtons.forEach((button) => {
-        button.addEventListener('click', function () {
-            const projectInfo = button.closest('.project-info');
-            const moreText = projectInfo.querySelector('.more-text');
+  toggleButtons.forEach((button) => {
+    button.addEventListener('click', function () {
+      const projectInfo = button.closest('.project-info');
+      if (!projectInfo) return;
 
-            if (moreText.style.display === 'none' || moreText.style.display === '') {
-                moreText.style.display = 'block'; 
-                button.textContent = 'See Less';
-            } else {
-                moreText.style.display = 'none';
-                button.textContent = 'See More';
-            }
-        });
-    });
+      const moreText = projectInfo.querySelector('.more-text');
+      if (!moreText) return;
 
-    // Navigation bar toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('nav'); // Target the nav element directly
+      const isHidden = getComputedStyle(moreText).display === 'none';
 
-    navToggle.addEventListener('click', () => {
-        if (navMenu.classList.contains('visible')) {
-            navMenu.classList.remove('visible');
-            navMenu.classList.add('collapsing');
-            setTimeout(() => {
-                navMenu.classList.remove('collapsing');
-                navMenu.style.display = 'none';
-            }, 100); // Match slideUp animation duration
-        } else {
-            navMenu.style.display = 'flex';
-            navMenu.classList.add('visible');
+      if (isHidden) {
+        // Show (keep inline flow inside the paragraph)
+        moreText.style.display = 'inline';
+        button.textContent = 'See Less';
+
+        // If moreText was given reveal, force it visible on click
+        if (moreText.classList.contains('reveal')) {
+          moreText.classList.remove('is-visible');
+          void moreText.offsetHeight; // reflow to restart transition
+          moreText.classList.add('is-visible');
         }
+      } else {
+        // Hide
+        moreText.style.display = 'none';
+        button.textContent = 'See More';
+
+        if (moreText.classList.contains('reveal')) {
+          moreText.classList.remove('is-visible');
+        }
+      }
     });
-});
+  });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleButtons = document.querySelectorAll('.toggle-button');
+  // -----------------------------
+  // Scroll reveal (fade/slide-in)
+  // -----------------------------
+  const revealEls = document.querySelectorAll('.reveal');
 
-    toggleButtons.forEach((button) => {
-        button.addEventListener('click', function () {
-            const projectInfo = button.closest('.project-info');
-            const moreText = projectInfo.querySelector('.more-text');
+  // Fallback if IntersectionObserver isn't available
+  if (!('IntersectionObserver' in window)) {
+    revealEls.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
 
-            if (moreText.style.display === 'none' || moreText.style.display === '') {
-                moreText.style.display = 'block';
-                button.textContent = 'See Less';
-            } else {
-                moreText.style.display = 'none';
-                button.textContent = 'See More';
-            }
-        });
-    });
-
-    // -----------------------------
-    // Scroll reveal (fade-in on view)
-    // -----------------------------
-    const revealEls = document.querySelectorAll('.reveal');
-
-    // Fallback if IntersectionObserver isn't available
-    if (!('IntersectionObserver' in window)) {
-        revealEls.forEach((el) => el.classList.add('is-visible'));
-        return;
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target); // stay visible after first reveal
+        }
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: '0px 0px -5% 0px',
     }
+  );
 
-    const observer = new IntersectionObserver(
-        (entries, obs) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    obs.unobserve(entry.target); // ensures it stays visible
-                }
-            });
-        },
-        {
-            threshold: 0.2,          // how much must be visible before revealing
-            rootMargin: '0px 0px -5% 0px' // reveals slightly before it fully enters
-        }
-    );
-
-    revealEls.forEach((el) => observer.observe(el));
+  revealEls.forEach((el) => observer.observe(el));
 });
