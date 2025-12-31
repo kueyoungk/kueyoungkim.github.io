@@ -208,10 +208,15 @@ nav a:hover::after {
     max-width: none;
     margin: 2.5rem auto 0 auto;
     background: #fff;
-    padding: 1em;
     position: relative;
     box-sizing: border-box;
     z-index: 1;
+
+    /* ... keep your existing width/margin/background/etc ... */
+    padding-left: clamp(1rem, 3vw, 3rem);
+    padding-right: clamp(1rem, 3vw, 3rem);
+    padding-top: clamp(1.25rem, 3vw, 3rem);
+    padding-bottom: clamp(1.25rem, 3vw, 3rem);
 }
 
 hr {
@@ -395,12 +400,6 @@ hr {
     padding: 2em 6em;
 }
 
-@media (max-width: 768px) {
-    .cv-section {
-        padding: 2em 3em;
-    }
-}
-
 .cv-section .cv-info {
     margin-bottom: 1em;
 }
@@ -520,6 +519,42 @@ footer {
     .main-content {
         margin-top: 2.5rem;
     }
+}
+
+@media (max-width: 768px) {
+  /* Ensure CV rows don't participate in any shared grid/columns */
+  .cv-section .cv-info {
+    display: block !important;
+    columns: initial !important;
+    column-count: initial !important;
+  }
+
+  /* Each CV row becomes its own 1-column layout */
+  .cv-section .short-cv-table {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    row-gap: 0.5rem;
+    width: 100%;
+  }
+
+  /* Make sure header appears above its own content */
+  .cv-section .cv-column-left,
+  .cv-section .cv-column-right {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Optional: tighten list spacing */
+  .cv-section .cv-column-right ul {
+    margin: -0.5rem 0 0 0;
+    padding-left: 1.1rem;
+  }
+
+  .cv-section {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
 }
 
 /* -----------------------------
