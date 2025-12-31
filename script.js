@@ -64,4 +64,35 @@ document.addEventListener('DOMContentLoaded', function () {
   );
 
   revealEls.forEach((el) => observer.observe(el));
+
+    // -----------------------------
+  // Parallax header image
+  // -----------------------------
+  const headerImg = document.querySelector('.header-photo img');
+
+  if (headerImg) {
+    let ticking = false;
+    const speed = 0.35; // smaller = slower movement
+
+    const updateParallax = () => {
+      const y = window.scrollY || window.pageYOffset;
+
+      // Move image down more slowly than scroll
+      headerImg.style.transform = `translate3d(0, ${y * speed}px, 0) scale(1.05)`;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    };
+
+    // Respect reduced motion
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.addEventListener('scroll', onScroll, { passive: true });
+      updateParallax(); // initialize
+    }
+  }
 });
