@@ -564,6 +564,12 @@ footer {
 
 }
 
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
+
 /* -----------------------------
    Scroll reveal animation
 ------------------------------ */
