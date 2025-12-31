@@ -402,7 +402,7 @@ hr {
 
 /* CV section */
 .cv-section {
-    background: #100039;
+    background: #000115;
     color: #ffffff;
     padding: 2em 6em;
 }
@@ -415,7 +415,7 @@ hr {
     text-align: center;
     display: inline-block;
     background: #ffffff;
-    color: #100039;
+    color: #000115;
     padding: 0.5em 1em;
     border: 1px solid #ffffff;
     text-decoration: none;
@@ -427,7 +427,7 @@ hr {
 }
 
 .cv-button:hover {
-    background: #100039;
+    background: #000115;
     color: #ffffff;
 }
 
