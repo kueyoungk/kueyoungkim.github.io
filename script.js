@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!prefersReducedMotion && headerImg) {
         let ticking = false;
-        const speed = 0.35; // smaller = slower movement
+        const speed = 0.4; // smaller = slower movement
         const scale = 1.05; // avoid visible edges
 
         const updateParallax = () => {
