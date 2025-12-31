@@ -1,11 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
   // -----------------------------
+  // Mobile nav toggle (hamburger)
+  // -----------------------------
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.menu nav');
+
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('is-open');
+    });
+
+    // Close menu after clicking an anchor link (mobile)
+    nav.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+      });
+    });
+  }
+
+  // Respect reduced motion (applies to reveal + parallax)
+  const prefersReducedMotion =
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // -----------------------------
   // See More / See Less toggles
   // -----------------------------
-  const toggleButtons = document.querySelectorAll('.toggle-button');
-
-  toggleButtons.forEach((button) => {
-    button.addEventListener('click', function () {
+  document.querySelectorAll('.toggle-button').forEach((button) => {
+    button.addEventListener('click', () => {
       const projectInfo = button.closest('.project-info');
       if (!projectInfo) return;
 
@@ -15,14 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const isHidden = getComputedStyle(moreText).display === 'none';
 
       if (isHidden) {
-        // Show (keep inline flow inside the paragraph)
+        // Show (inline keeps it within paragraph flow)
         moreText.style.display = 'inline';
         button.textContent = 'See Less';
 
-        // If moreText was given reveal, force it visible on click
+        // If moreText has reveal, force it visible immediately
         if (moreText.classList.contains('reveal')) {
-          moreText.classList.remove('is-visible');
-          void moreText.offsetHeight; // reflow to restart transition
           moreText.classList.add('is-visible');
         }
       } else {
@@ -40,45 +60,39 @@ document.addEventListener('DOMContentLoaded', function () {
   // -----------------------------
   // Scroll reveal (fade/slide-in)
   // -----------------------------
-  const revealEls = document.querySelectorAll('.reveal');
+  const revealEls = Array.from(document.querySelectorAll('.reveal'));
 
-  // Fallback if IntersectionObserver isn't available
-  if (!('IntersectionObserver' in window)) {
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
     revealEls.forEach((el) => el.classList.add('is-visible'));
-    return;
+  } else {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target); // stay visible after first reveal
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -5% 0px' }
+    );
+
+    revealEls.forEach((el) => observer.observe(el));
   }
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target); // stay visible after first reveal
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-      rootMargin: '0px 0px -5% 0px',
-    }
-  );
-
-  revealEls.forEach((el) => observer.observe(el));
-
-    // -----------------------------
+  // -----------------------------
   // Parallax header image
   // -----------------------------
   const headerImg = document.querySelector('.header-photo img');
 
-  if (headerImg) {
+  if (!prefersReducedMotion && headerImg) {
     let ticking = false;
     const speed = 0.35; // smaller = slower movement
+    const scale = 1.05; // avoid visible edges
 
     const updateParallax = () => {
-      const y = window.scrollY || window.pageYOffset;
-
-      // Move image down more slowly than scroll
-      headerImg.style.transform = `translate3d(0, ${y * speed}px, 0) scale(1.05)`;
+      const y = window.scrollY || window.pageYOffset || 0;
+      headerImg.style.transform = `translate3d(0, ${y * speed}px, 0) scale(${scale})`;
       ticking = false;
     };
 
@@ -89,10 +103,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
-    // Respect reduced motion
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      window.addEventListener('scroll', onScroll, { passive: true });
-      updateParallax(); // initialize
-    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    updateParallax();
   }
+
+  // -----------------------------
+  // Footer year (optional: keeps it all in one place)
+  // -----------------------------
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 });

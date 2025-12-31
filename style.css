@@ -9,6 +9,10 @@ body, html {
     background: #ffffff;
 }
 
+h2 {
+    margin-top: 0;
+}
+
 /* menu bar */
 header {
     position: relative;
@@ -195,15 +199,16 @@ nav a:hover::after {
     margin-top: 12px;
     font-size: clamp(1rem, 2vw, 1.4rem);
     opacity: 0.85;
+    font-weight: 600;
 }
 
 /* container for main content */
 .main-content {
-    width: 90%;
-    max-width: 1200px;
-    margin: clamp(-120px, -7vw, -60px) auto 0 auto;
+    width: min(92vw, 1400px);
+    max-width: none;
+    margin: 2.5rem auto 0 auto;
     background: #fff;
-    padding: 3em;
+    padding: 1em;
     position: relative;
     box-sizing: border-box;
     z-index: 1;
@@ -257,17 +262,16 @@ hr {
 
 /*separator box*/
 .separator-box {
-    background: #100039;
-    margin: 0 auto;
-    width: 100vw;
-    height: 150px;
-    position: relative;
-    z-index: 1;
+    height: 2px; /* strong, intentional line */
+    background: rgba(0, 0, 0, 0.85);
+
+    width: min(92vw, 1400px); /* EXACTLY matches .main-content */
+    margin: auto;
 }
 
 /* publications section */
 .publications-section {
-    margin: -3vw auto 0 auto;
+    margin: 0 auto 0 auto;
     z-index: 2;
     position: relative;
 }
@@ -278,7 +282,6 @@ hr {
     margin-bottom: 1em;
     gap: 1em;
     align-items: flex-start;
-    border-bottom: 1px solid #ddd;
     padding-bottom: 1em;
 }
 
@@ -305,7 +308,7 @@ hr {
 
 .publication-info {
     flex: 1;
-    margin-top: -20px;
+    margin-top: 0;
     text-align: justify;
 }
 
@@ -338,6 +341,20 @@ hr {
 
 .publication-info.show-more .more-text {
     display: block;
+}
+
+/* Gradient fade divider between publication/project entries */
+.pub-divider {
+    height: 1px;
+    width: 100%;
+    margin: 1rem 0;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(0, 0, 0, 0.18),
+        transparent
+    );
 }
 
 /* CV section */
@@ -470,7 +487,7 @@ footer {
 
 @media (min-width: 1600px) {
     .main-content {
-        margin-top: -120px;
+        margin-top: 2.5rem;
     }
 }
 
