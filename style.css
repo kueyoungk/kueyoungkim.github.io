@@ -21,6 +21,13 @@ header {
     box-sizing: border-box;
 }
 
+.name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: auto;
+    color: white;
+}
+
 .menu {
     position: absolute;   /* was fixed */
     top: 0;
@@ -197,7 +204,7 @@ nav a:hover::after {
 
 .header-overlay p {
     margin-top: 12px;
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size: 2rem;
     opacity: 0.85;
     font-weight: 600;
 }
