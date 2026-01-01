@@ -143,8 +143,8 @@ nav a:hover::after {
 /* banner photo */
 .header-photo {
     position: relative;
-    height: 115vh;              /* adjust: 60–80vh is typical */
-    min-height: 420px;         /* prevents it from getting too small */
+    height: 100svh;             /* match viewport height for centered hero text */
+    min-height: 420px;          /* prevents it from getting too small */
     overflow: hidden;
 }
 
@@ -172,7 +172,7 @@ nav a:hover::after {
 
 @media (max-width: 768px) {
     .header-photo {
-        height: 60vh;
+        height: 100svh;
         min-height: 280px;
         background: transparent;
     }
@@ -207,6 +207,43 @@ nav a:hover::after {
     font-size: 2rem;
     opacity: 0.85;
     font-weight: 600;
+}
+
+.mission-statement {
+    display: inline-block;
+}
+
+.mission-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-12px);
+    animation: mission-fade 600ms ease forwards;
+    animation-delay: var(--word-delay, 0ms);
+}
+
+.mission-word.mission-highlight {
+    animation:
+        mission-fade 600ms ease forwards,
+        mission-highlight 400ms ease forwards;
+    animation-delay:
+        var(--word-delay, 0ms),
+        var(--highlight-delay, 0ms);
+    text-shadow:
+        0 0 6px rgba(233, 79, 55, 0.65),
+        0 0 14px rgba(233, 79, 55, 0.45);
+}
+
+@keyframes mission-fade {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes mission-highlight {
+    to {
+        color: #FF674F;
+    }
 }
 
 /* container for main content */
@@ -590,5 +627,18 @@ footer {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+
+    .mission-word {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    .mission-word.mission-highlight {
+        color: #E94F37;
+        text-shadow:
+            0 0 6px rgba(233, 79, 55, 0.65),
+            0 0 14px rgba(233, 79, 55, 0.45);
     }
 }

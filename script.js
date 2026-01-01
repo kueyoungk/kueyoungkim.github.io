@@ -24,6 +24,40 @@ document.addEventListener('DOMContentLoaded', function () {
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // -----------------------------
+    // Mission statement word reveal
+    // -----------------------------
+    const missionEl = document.querySelector('.mission-statement');
+    if (missionEl) {
+        const text = missionEl.textContent.trim();
+        const words = text.split(/\s+/);
+        const fadeDurationMs = 600;
+        const staggerMs = 140;
+
+        missionEl.textContent = '';
+
+        words.forEach((word, index) => {
+            const wordDelayMs = index * staggerMs;
+            const span = document.createElement('span');
+            span.textContent = word;
+            span.classList.add('mission-word');
+
+            const normalized = word.replace(/[^\w]/g, '').toLowerCase();
+            if (normalized === 'materials' || normalized === 'innovation') {
+                span.classList.add('mission-highlight');
+                span.style.setProperty('--highlight-delay', `${wordDelayMs + 400}ms`);
+            }
+
+            span.style.setProperty('--word-delay', `${wordDelayMs}ms`);
+            missionEl.appendChild(span);
+
+            if (index < words.length - 1) {
+                missionEl.appendChild(document.createTextNode(' '));
+            }
+        });
+
+    }
+
+    // -----------------------------
     // See More / See Less toggles
     // -----------------------------
     document.querySelectorAll('.toggle-button').forEach((button) => {
