@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
     <title>Kueyoung Kim</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- Cache-busting: bump v= on each deploy -->
+    <link rel="stylesheet" href="style.css?v=20250308" />
     <link rel="icon" type="image/x-icon" href="docs/assets/favicon.ico">
 </head>
 <body>
@@ -297,7 +298,8 @@
         <p>&copy; <span id="year"></span> Kueyoung Kim. All rights reserved.</p>
     </footer>
     
-    <script src="script.js"></script>
+    <!-- Cache-busting: bump v= on each deploy -->
+    <script src="script.js?v=20250308"></script>
     <script>
         document.getElementById("year").innerHTML = new Date().getFullYear();
     </script>
