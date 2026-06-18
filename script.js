@@ -18,6 +18,44 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // -----------------------------
+    // Smooth scroll for nav links
+    // -----------------------------
+    document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // -----------------------------
+    // Back-to-top button
+    // -----------------------------
+    const backToTopBtn = document.getElementById('back-to-top');
+    const headerPhoto = document.querySelector('.header-photo');
+
+    if (backToTopBtn && headerPhoto) {
+        const onScrollBackToTop = () => {
+            const headerBottom = headerPhoto.offsetTop + headerPhoto.offsetHeight;
+            if (window.scrollY > headerBottom) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        };
+
+        window.addEventListener('scroll', onScrollBackToTop, { passive: true });
+        onScrollBackToTop(); // run once on load
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // Respect reduced motion (applies to reveal + parallax)
     const prefersReducedMotion =
         window.matchMedia &&

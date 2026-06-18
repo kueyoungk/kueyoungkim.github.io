@@ -1,0 +1,1 @@
+This folder contains code for a personal website that is used as an academic portfolio. 
